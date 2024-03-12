@@ -38,7 +38,7 @@ void loop()
   }    
   Serial.print("Timer: "); 
   Serial.print(timer);
-          // deivydosser is dossing again 06.03.2024// 
+          // deivydosser is dossing again 06.03.2024, 12.03.2024// 
   int cnt = 0; // counter that is set to go up by one every second
   while(timer == true && light < lightLevel)// while light is less then 10 
   {
