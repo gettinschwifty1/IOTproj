@@ -1,10 +1,10 @@
-//#include <WiFi.h>
-//#include <WiFiClient.h>
-//#include <WiFiServer.h>
-//#include <WiFiUdp.h>
+#include <WiFi.h>
+#include <WiFiClient.h>
+#include <WiFiServer.h>
+#include <WiFiUdp.h>
 
 
-/*
+
 // from pushingbox setup 
 //-------------------------------------------------------
   /////////////////
@@ -28,8 +28,8 @@ char serverName[] = "api.pushingbox.com";
 boolean pinDevid1State = false;                // Save the last state of the Pin for DEVID1
 boolean lastConnected = false;  
 int status = WL_IDLE_STATUS;     // the Wifi radio's status
-*/
-//WiFiClient client;
+
+WiFiClient client;
 //--------------------------------------------------------// 
 
 //  code for reading sensor comes from https://sensorkit.arduino.cc/sensorkit/module/lessons/lesson/05-the-light-sensor
@@ -40,7 +40,7 @@ bool timer = false;
 void setup() 
 {
   Serial.begin(9600); //begin Serial Communication
-/*  
+  
   // set up for pushingbox notifactions
   //---------------------------------------------------------------------------------------------------------------------------------
   // initialize serial:
@@ -60,7 +60,7 @@ void setup()
   else {
     Serial.println("Connected to network");
   }
- */ //----------------------------------------------------------------------------------------------------------------------------------
+  //----------------------------------------------------------------------------------------------------------------------------------
 }
  
 void loop() 
@@ -89,7 +89,7 @@ void loop()
   }    
   Serial.print("Timer: "); 
   Serial.print(timer);
-          // deivydosser is dossing again 06.03.2024// 
+          // deivydosser is dossing again 06.03.2024, 19.03.2024,
   int cnt = 0; // counter that is set to go up by one every second
   while(timer == true && light < 10)// while light is less then 10 
   {
@@ -102,14 +102,14 @@ void loop()
       
     }
     raw_light = analogRead(light_sensor); // read the raw value from light_sensor pin (A3)
-     light = map(raw_light, 0, 1023, 0, 100);
+    light = map(raw_light, 0, 1023, 0, 100);
     
     Serial.print("Counter: "); 
     Serial.print(cnt);
   }
 }
 //-----------------------------------------------------------------------------------------------------------------------------------------------
-/*void loopWifiSetup() //taken from pushingbox code for setting up
+void loopWifiSetup() //taken from pushingbox code for setting up
 {
    ////
    // Listening for the pinDevid1 state
@@ -164,5 +164,5 @@ void sendToPushingBox(char devid[]){
     if(DEBUG){Serial.println("connection failed");} 
   } 
 }
-*/
+
 
