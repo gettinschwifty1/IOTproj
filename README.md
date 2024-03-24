@@ -3,5 +3,6 @@ By:
 Will O’Donnell,
 Jack Battle,
 Niall Moran,
-Ben Carney,
+Ben Carney 
+and
 Deivydas Senuta.
