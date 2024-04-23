@@ -5,6 +5,10 @@
 
 
 
+
+
+
+
 // from pushingbox setup 
 //-------------------------------------------------------
   /////////////////
@@ -89,7 +93,7 @@ void loop()
   }    
   Serial.print("Timer: "); 
   Serial.print(timer);
-          // deivydosser is dossing again 06.03.2024, 19.03.2024,
+        // deivydosser is dossing again 06.03.2024, 19.03.2024, 16.04.2024, 23.04.2024,  
   int cnt = 0; // counter that is set to go up by one every second
   while(timer == true && light < 10)// while light is less then 10 
   {
@@ -99,7 +103,7 @@ void loop()
     {
       digitalWrite(5, HIGH);
       timer = false;
-      
+      sendToPushingBox(DEVID1);
     }
     raw_light = analogRead(light_sensor); // read the raw value from light_sensor pin (A3)
     light = map(raw_light, 0, 1023, 0, 100);
